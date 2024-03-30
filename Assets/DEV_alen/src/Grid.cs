@@ -63,11 +63,6 @@ public class NewBehaviourScript : MonoBehaviour
 
                 this.grille[i].Add(tile.GetComponent<Chemain>());
 
-                if (Random.value < 0.02)
-                {
-                    setMaterial(new Chemain("vert"), i, j);
-                }
-
             }
         }
     }
