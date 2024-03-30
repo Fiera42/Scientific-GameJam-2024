@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6213431914502982764}
   - component: {fileID: 6802565987335532402}
   m_Layer: 6
-  m_Name: Gold
+  m_Name: Platine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.9043241, b: 0, a: 0.40784314}
+  m_Color: {r: 0, g: 0.04080534, b: 1, a: 0.9372549}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627c525e21a35ea42929a1b5579cbdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameMat: Gold
-  price: 0
+  nameMat: Platine
+  price: 200
 --- !u!61 &6213431914502982764
 BoxCollider2D:
   m_ObjectHideFlags: 0

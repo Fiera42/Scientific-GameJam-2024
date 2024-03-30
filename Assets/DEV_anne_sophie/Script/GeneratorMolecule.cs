@@ -6,6 +6,7 @@ public class GeneratorMolecule : MonoBehaviour
 	[SerializeField] private Molecule molecule;
     [SerializeField] private int nbrMol = 10;
 	[SerializeField] private float speedInstance = 1; //en secondes
+	[SerializeField] private float waitBeforeStart = 0; //en secondes
 	[SerializeField] private Transform[] waypoints;
 
 	private void Start()
@@ -15,6 +16,7 @@ public class GeneratorMolecule : MonoBehaviour
 
 	public IEnumerator Launch()
 	{
+		yield return new WaitForSeconds(waitBeforeStart);
 		for (int i = 0; i < nbrMol; i++)
 		{
 			Molecule newMol = Instantiate(molecule, transform.position, molecule.transform.rotation);

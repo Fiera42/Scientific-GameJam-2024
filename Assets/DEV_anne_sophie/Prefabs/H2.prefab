@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,8 +103,9 @@ MonoBehaviour:
   nameMol: H2
   speed: 4
   materialList:
-  - {fileID: 0}
-  speedInteractionList: []
+  - {fileID: 8596140363891798470, guid: 59dc1ac8d9bab854aa080a6726e2882d, type: 3}
+  speedInteractionList:
+  - 10
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
