@@ -30,7 +30,8 @@ public class Molecule : MonoBehaviour
         speedModifiers = new Dictionary<string, float>();
 
         for(int i = 0; i < materialList.Length; i++){
-            speedModifiers.Add(materialList[i].getName(), speedInteractionList[i]);
+			Debug.Log(materialList[i].name);
+            speedModifiers.Add(materialList[i].name, speedInteractionList[i]);
         }
     }
 
@@ -69,12 +70,9 @@ public class Molecule : MonoBehaviour
 
 		//Material
 		if (collision.gameObject.layer == 6) {
-			
 			MaterialJam collidedMat = collision.gameObject.GetComponent<MaterialJam>();
-			string collidedMatName = collidedMat.getName();
-
-			if (speedModifiers.ContainsKey(collidedMatName)) {
-				currentSpeedModifier = speedModifiers[collidedMatName];
+			if (speedModifiers.ContainsKey(collidedMat.nameMat)) {
+				currentSpeedModifier = speedModifiers[collidedMat.nameMat];
 			}
 		}
 	}
