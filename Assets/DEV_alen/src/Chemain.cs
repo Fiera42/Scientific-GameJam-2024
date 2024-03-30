@@ -9,6 +9,7 @@ public class Chemain : MonoBehaviour
     public bool dragable = false;
 
 
+
     public void SetMaterial(MaterialPropertySO mat)
     {
         typeOfMat = mat;
@@ -32,9 +33,13 @@ public class Chemain : MonoBehaviour
 
     void OnMouseDown()
     {
-        Instantiate(this.gameObject, this.transform.position, Quaternion.identity);
-        isFollowingMouse = true;
-        transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+        if (dragable)
+        {
+            Instantiate(this.gameObject, this.transform.position, Quaternion.identity);
+            isFollowingMouse = true;
+            transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+        }
+
     }
 
     void OnMouseUp()
