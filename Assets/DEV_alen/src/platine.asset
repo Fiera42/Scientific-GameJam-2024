@@ -15,3 +15,5 @@ MonoBehaviour:
   typeSprite: {fileID: 21300000, guid: 94271d866ff02674f8c2b51ef481c6d3, type: 3}
   nameMetal: Platine
   speed: 10
+  direction: 1
+  directionChange: 103
