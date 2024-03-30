@@ -10,4 +10,5 @@ public class MaterialPropertySO : ScriptableObject
     public float speed;
     public bool direction;
     public char directionChange;
+    public int price;
 }

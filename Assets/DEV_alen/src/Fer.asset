@@ -15,3 +15,5 @@ MonoBehaviour:
   typeSprite: {fileID: 21300000, guid: 96f3fc68d9c1b754ba06a244a6e9f463, type: 3}
   nameMetal: Fer
   speed: 15
+  direction: 1
+  directionChange: 100
