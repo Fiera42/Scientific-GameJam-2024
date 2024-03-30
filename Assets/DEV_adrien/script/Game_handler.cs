@@ -7,7 +7,6 @@ public class Game_handler : MonoBehaviour
 {
     [Header("References")]
     private GameObject[] buttonLevel;
-    public GameObject topLeftOption;
     public GameObject endGamePannel;
     public GameObject musicPlayer;
     public GameObject cam;
@@ -40,7 +39,7 @@ public class Game_handler : MonoBehaviour
         Destroy(musicPlayer);
 
         //smooth transition, so wait a litle
-        transition();
+        StartCoroutine(transition());
         StartCoroutine(loadLevelRoutine(0.55f, i));
 
         //reset the time, in case we where in pause
@@ -50,7 +49,7 @@ public class Game_handler : MonoBehaviour
     public void loadNextLevel() { //same, but with a different index (called at the end of a level)
         musicPlayer = GameObject.FindGameObjectWithTag("MusicPlayer");
         Destroy(musicPlayer);
-        transition();
+        StartCoroutine(transition());
         StartCoroutine(loadLevelRoutine(0.55f, SceneManager.GetActiveScene().buildIndex + 1));
     }
 
@@ -63,7 +62,7 @@ public class Game_handler : MonoBehaviour
     }
 
     public void resetLevel() { //reload safely the scene
-        transition();
+        StartCoroutine(transition());
         StartCoroutine(loadLevelRoutine(0.55f, SceneManager.GetActiveScene().buildIndex));
         Time.timeScale = 1;
     }
@@ -102,6 +101,7 @@ public class Game_handler : MonoBehaviour
     }
 
     IEnumerator transition(float delay = 0) { //create a big black transition screen effect
+        Debug.Log("reached");
         yield return new WaitForSeconds(delay);
         Instantiate(transitionScreen, cam.transform.position + new Vector3(22,0,10), Quaternion.Euler(new Vector3(0,0,180)));
     }

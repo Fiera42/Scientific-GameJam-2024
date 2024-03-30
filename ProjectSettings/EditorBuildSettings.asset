@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DEV_adrien/Main menu.unity
     guid: c023e67f384cec6469c1e0200c76da40
+  - enabled: 1
+    path: Assets/DEV_adrien/Adrien.unity
+    guid: b1fd7fb9ffd91924fb003529f7f4f2bd
   m_configObjects: {}
