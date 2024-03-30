@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f9b5cbc4be195c478e9fafd847eb288, type: 3}
-  m_Name: Platine
+  m_Name: platine
   m_EditorClassIdentifier: 
-  typeSprite: {fileID: 21300000, guid: 8e15d22ca268b204db4d9ae497f75bd0, type: 3}
+  typeSprite: {fileID: 21300000, guid: 94271d866ff02674f8c2b51ef481c6d3, type: 3}
   nameMetal: Platine
   speed: 10
-  direction: 0
-  directionChange: 56
+  direction: 1
+  directionChange: 103
+  price: 10

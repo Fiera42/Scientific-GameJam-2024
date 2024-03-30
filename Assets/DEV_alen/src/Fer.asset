@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9b5cbc4be195c478e9fafd847eb288, type: 3}
   m_Name: Fer
   m_EditorClassIdentifier: 
-  typeSprite: {fileID: 21300000, guid: 559eff4090a02684e9ff341deb027a23, type: 3}
+  typeSprite: {fileID: 21300000, guid: 96f3fc68d9c1b754ba06a244a6e9f463, type: 3}
   nameMetal: Fer
   speed: 15
-  direction: 0
-  directionChange: 85
+  direction: 1
+  directionChange: 100
+  price: 10
