@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 6178875016716451073}
   - component: {fileID: 3479099216435398904}
   - component: {fileID: 1018571049293799550}
-  - component: {fileID: 8863012512026112709}
-  - component: {fileID: 2743410691693275315}
-  m_Layer: 0
-  m_Name: Square red
+  - component: {fileID: 3819507840704559308}
+  - component: {fileID: 5006991701714559271}
+  m_Layer: 6
+  m_Name: BaseTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 96f3fc68d9c1b754ba06a244a6e9f463, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef934168e9a7ce8419ea9352e59f29bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2054e9aac2f18584ea78e397d6af32c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfMat: {fileID: 11400000, guid: 490bd672257bc1542af0733a5f116fda, type: 2}
+  typeOfMat: {fileID: 0}
   dragable: 0
---- !u!61 &8863012512026112709
+--- !u!61 &3819507840704559308
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,16 +137,16 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.99333334, y: 0.99333334}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.99333334, y: 0.99333334}
   m_EdgeRadius: 0
---- !u!50 &2743410691693275315
+--- !u!50 &5006991701714559271
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
