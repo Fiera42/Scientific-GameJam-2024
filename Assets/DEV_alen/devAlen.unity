@@ -320,8 +320,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e232fd46893a8d24791f99d22f4a4815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cr: {fileID: 3514581177372302633, guid: 335d62d356a438a489d2dd6126fd9960, type: 3}
-  parent: {fileID: 0}
+  tailleX: 10
+  tailleY: 10
+  prefabTile: {fileID: 3514581177372302633, guid: 335d62d356a438a489d2dd6126fd9960, type: 3}
+  availableMaterial:
+  - {fileID: 11400000, guid: 24d87f5d545c4b743b409960c4640090, type: 2}
 --- !u!4 &1249625297
 Transform:
   m_ObjectHideFlags: 0
