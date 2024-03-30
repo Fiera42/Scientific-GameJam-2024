@@ -10,7 +10,6 @@ public class Chemain : MonoBehaviour
     public bool dragable = false;
 
     private TMP_Text t;
-    private int prix = 0;
 
     public void SetMaterial(MaterialPropertySO mat)
     {

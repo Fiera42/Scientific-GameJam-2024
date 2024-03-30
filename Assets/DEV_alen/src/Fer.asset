@@ -17,3 +17,4 @@ MonoBehaviour:
   speed: 15
   direction: 1
   directionChange: 100
+  price: 10
