@@ -15,7 +15,7 @@ public class Molecule : MonoBehaviour
 	[Header("Interaction with materials")]
 	[SerializeField] private MaterialPropertySO[] materialList;
     [SerializeField] private float[] speedInteractionList;
-    private Dictionary <string, float> speedModifiers;
+    private Dictionary <string, float> speedModifiers= new Dictionary<string, float>();
 
 	//----------------------- PRIVATE
 	private int currentWaypointIndex = 0;
@@ -26,8 +26,6 @@ public class Molecule : MonoBehaviour
         if(materialList.Length != speedInteractionList.Length) {
             throw new ArgumentException("MaterialJam list is not the same lenght as speed interaction list");
         }
-
-        speedModifiers = new Dictionary<string, float>();
 
         for(int i = 0; i < materialList.Length; i++){
             speedModifiers.Add(materialList[i].nameMetal, speedInteractionList[i]);
@@ -71,8 +69,8 @@ public class Molecule : MonoBehaviour
 
 		//Material
 		if (collision.gameObject.layer == 6) {
-			Debug.Log(collision.gameObject.name);
 			Chemain collidedMat = collision.gameObject.GetComponent<Chemain>();
+			if (collidedMat.typeOfMat == null) return;
 			if (speedModifiers.ContainsKey(collidedMat.typeOfMat.nameMetal)) {
 				currentSpeedModifier = speedModifiers[collidedMat.typeOfMat.nameMetal];
 			}

@@ -1,3 +1,4 @@
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
@@ -47,15 +48,14 @@ public class Chemain : MonoBehaviour
         isFollowingMouse = false;
         if (dragable)
         {
-            RaycastHit hit;
-            Ray ray = new Ray(transform.position, new Vector3(0, 0, 5));
-            Debug.DrawRay(transform.position, new Vector3(0, 0, 5), Color.blue,100f);
-            if(Physics.Raycast(ray, out hit))
+			BoxCollider2D boxCollider = gameObject.GetComponent<BoxCollider2D>();
+			Collider2D[] overlap = Physics2D.OverlapAreaAll(boxCollider.bounds.min, boxCollider.bounds.max);
+            if (overlap.Length > 1)
             {
-                print(hit.transform.gameObject);
-                hit.transform.GetComponent<Chemain>().SetMaterial(this.typeOfMat);
-            }
-            Destroy(gameObject);
+				Debug.Log(overlap[1].transform.gameObject);
+				overlap[1].transform.GetComponent<Chemain>().SetMaterial(this.typeOfMat);
+			}
+			Destroy(gameObject);
         }
     }
 
