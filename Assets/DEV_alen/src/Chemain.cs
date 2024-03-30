@@ -1,10 +1,16 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class Chemain : MonoBehaviour
 {
     string material;
     public MaterialPropertySO typeOfMat;
     public bool dragable = false;
+
+    private TMP_Text t;
+    private int prix = 0;
 
     public void SetMaterial(MaterialPropertySO mat)
     {
@@ -35,6 +41,7 @@ public class Chemain : MonoBehaviour
             Instantiate(this.gameObject, this.transform.position, Quaternion.identity);
             isFollowingMouse = true;
             transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+
         }
 
     }
@@ -54,11 +61,14 @@ public class Chemain : MonoBehaviour
                     if (col.transform.GetComponent<Chemain>() == null) continue;
 
 					col.transform.GetComponent<Chemain>().SetMaterial(this.typeOfMat);
+                    PrixManager._activePrixManager.UpdatePrix(this.typeOfMat.price);
                     break;
 				}
 			}
-			Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
+
+
 
 }

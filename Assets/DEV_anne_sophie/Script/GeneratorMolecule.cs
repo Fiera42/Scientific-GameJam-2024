@@ -29,9 +29,7 @@ public class GeneratorMolecule : MonoBehaviour
 		for (int i = 0; i < nbrMol; i++)
 		{
 			Molecule newMol = Instantiate(molecule, transform.position, molecule.transform.rotation);
-			//newMol.waypoints = waypoints;
-			newMol.direction = direction;
-            newMol.transform.position = transform.position;
+			newMol.waypoints = waypoints;
             yield return new WaitForSeconds(speedInstance);
 		}
 	}

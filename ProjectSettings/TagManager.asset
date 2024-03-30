@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MusicPlayer
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,7 @@ TagManager:
     locked: 0
   - name: Generator
     uniqueID: 2633347515
+    locked: 0
+  - name: Molecule
+    uniqueID: 1395225705
     locked: 0
