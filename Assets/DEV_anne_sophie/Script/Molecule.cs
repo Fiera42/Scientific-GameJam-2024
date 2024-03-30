@@ -13,7 +13,7 @@ public class Molecule : MonoBehaviour
 
 	//------------------------ MATERIALS
 	[Header("Interaction with materials")]
-	[SerializeField] private MaterialJam[] materialList;
+	[SerializeField] private MaterialPropertySO[] materialList;
     [SerializeField] private float[] speedInteractionList;
     private Dictionary <string, float> speedModifiers;
 
@@ -30,8 +30,7 @@ public class Molecule : MonoBehaviour
         speedModifiers = new Dictionary<string, float>();
 
         for(int i = 0; i < materialList.Length; i++){
-			Debug.Log(materialList[i].name);
-            speedModifiers.Add(materialList[i].name, speedInteractionList[i]);
+            speedModifiers.Add(materialList[i].nameMetal, speedInteractionList[i]);
         }
     }
 
@@ -72,9 +71,10 @@ public class Molecule : MonoBehaviour
 
 		//Material
 		if (collision.gameObject.layer == 6) {
-			MaterialJam collidedMat = collision.gameObject.GetComponent<MaterialJam>();
-			if (speedModifiers.ContainsKey(collidedMat.nameMat)) {
-				currentSpeedModifier = speedModifiers[collidedMat.nameMat];
+			Debug.Log(collision.gameObject.name);
+			Chemain collidedMat = collision.gameObject.GetComponent<Chemain>();
+			if (speedModifiers.ContainsKey(collidedMat.typeOfMat.nameMetal)) {
+				currentSpeedModifier = speedModifiers[collidedMat.typeOfMat.nameMetal];
 			}
 		}
 	}

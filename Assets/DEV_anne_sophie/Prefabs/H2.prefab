@@ -103,7 +103,7 @@ MonoBehaviour:
   nameMol: H2
   speed: 4
   materialList:
-  - {fileID: 8596140363891798470, guid: 59dc1ac8d9bab854aa080a6726e2882d, type: 3}
+  - {fileID: 11400000, guid: 490bd672257bc1542af0733a5f116fda, type: 2}
   speedInteractionList:
   - 10
   waypoints:
