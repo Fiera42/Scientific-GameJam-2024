@@ -9,12 +9,11 @@ public class GeneratorMolecule : MonoBehaviour
 	[SerializeField] private float waitBeforeStart = 0; //en secondes
 	[SerializeField] private Transform[] waypoints;
 
-	private void Start()
+	public void LaunchGenerator()
 	{
 		StartCoroutine(Launch());
 	}
-
-	public IEnumerator Launch()
+	private IEnumerator Launch()
 	{
 		yield return new WaitForSeconds(waitBeforeStart);
 		for (int i = 0; i < nbrMol; i++)

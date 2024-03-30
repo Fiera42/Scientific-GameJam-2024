@@ -36,7 +36,6 @@ public class Molecule : MonoBehaviour
 	{
 		if (waypoints != null && currentWaypointIndex < waypoints.Length)
 		{
-
 			Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
 
 			if (direction.magnitude < 0.1f)
