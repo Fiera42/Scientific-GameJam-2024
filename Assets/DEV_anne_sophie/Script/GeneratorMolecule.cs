@@ -8,8 +8,9 @@ public class GeneratorMolecule : MonoBehaviour
 	[SerializeField] private float speedInstance = 1; //en secondes
 	[SerializeField] private float waitBeforeStart = 0; //en secondes
 	[SerializeField] private Transform[] waypoints;
+	[SerializeField] private Vector3 direction;
 
-	private void Start()
+    private void Start()
 	{
 		StartCoroutine(Launch());
 	}
@@ -20,8 +21,10 @@ public class GeneratorMolecule : MonoBehaviour
 		for (int i = 0; i < nbrMol; i++)
 		{
 			Molecule newMol = Instantiate(molecule, transform.position, molecule.transform.rotation);
-			newMol.waypoints = waypoints;
-			yield return new WaitForSeconds(speedInstance);
+			//newMol.waypoints = waypoints;
+			newMol.direction = direction;
+            newMol.transform.position = transform.position;
+            yield return new WaitForSeconds(speedInstance);
 		}
 	}
 

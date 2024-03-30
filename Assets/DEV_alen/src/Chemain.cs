@@ -56,7 +56,6 @@ public class Chemain : MonoBehaviour
                 {
                     if (col == GetComponent<Collider2D>()) continue;
 
-					Debug.Log(col.transform.gameObject);
 					col.transform.GetComponent<Chemain>().SetMaterial(this.typeOfMat);
                     break;
 				}
