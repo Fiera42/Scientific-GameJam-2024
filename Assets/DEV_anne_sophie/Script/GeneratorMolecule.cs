@@ -10,10 +10,19 @@ public class GeneratorMolecule : MonoBehaviour
 	[SerializeField] private Transform[] waypoints;
 	[SerializeField] private Vector3 direction;
 
+	private Coroutine launchRoutine;
 	public void LaunchGenerator()
 	{
-		StartCoroutine(Launch());
+		launchRoutine = StartCoroutine(Launch());
 	}
+	public void StopGenerator()
+	{
+		if (launchRoutine == null) return;
+
+		StopCoroutine(launchRoutine);
+		launchRoutine = null;
+	}
+
 	private IEnumerator Launch()
 	{
 		yield return new WaitForSeconds(waitBeforeStart);

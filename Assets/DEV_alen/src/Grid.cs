@@ -1,9 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
-using UnityEngine.Jobs;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -46,6 +42,17 @@ public class NewBehaviourScript : MonoBehaviour
             Destroy(createdObject[i]);
         }
         createdObject.Clear();
+    }
+
+    public void InitMaterial()
+    {
+        foreach (var line in grille)
+        {
+            foreach (var row in line)
+            {
+                row.GetComponent<Chemain>().SetMaterial(null);
+            }
+        }
     }
 
     public void Dessiner()

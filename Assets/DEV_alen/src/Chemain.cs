@@ -9,7 +9,8 @@ public class Chemain : MonoBehaviour
     public void SetMaterial(MaterialPropertySO mat)
     {
         typeOfMat = mat;
-        this.GetComponent<SpriteRenderer>().sprite = mat.typeSprite;
+        if(mat == null) this.GetComponent<SpriteRenderer>().sprite = null;
+		else this.GetComponent<SpriteRenderer>().sprite = mat.typeSprite;
     }
 
     public string getMaterial() { return material; }

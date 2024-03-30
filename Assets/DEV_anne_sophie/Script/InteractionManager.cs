@@ -7,8 +7,10 @@ public class InteractionManager : MonoBehaviour
 {
     public List<GeneratorMolecule> allGenerator = new List<GeneratorMolecule>();
     [SerializeField] private Button startButton;
+    [SerializeField] private Button restartButton;
+	[SerializeField] private NewBehaviourScript grid;
 
-    public static InteractionManager Instance;
+	public static InteractionManager Instance;
 	private void Awake()
 	{
 		Instance = this;
@@ -17,6 +19,7 @@ public class InteractionManager : MonoBehaviour
 	private void Start()
 	{
 		startButton.onClick.AddListener(()=>StartAllGenerator());
+		restartButton.onClick.AddListener(()=>RemoveAll());
 	}
 
 	public void StartAllGenerator()
@@ -26,6 +29,15 @@ public class InteractionManager : MonoBehaviour
             item.LaunchGenerator();
         }
     }
+
+    public void RemoveAll()
+    {
+        grid.InitMaterial();
+		foreach (var item in allGenerator)
+		{
+			item.StopGenerator();
+		}
+	}
 
 	[Serializable] public struct MoleculeInteraction
     {

@@ -47,6 +47,7 @@ public class Molecule : MonoBehaviour
 
 	void Update()
 	{
+		/*
 		if (waypoints.Length>0 && currentWaypointIndex < waypoints.Length)
 		{
 			Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
@@ -58,13 +59,15 @@ public class Molecule : MonoBehaviour
 			else
 			{
 				//transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * currentSpeedModifier * Time.deltaTime);
-				transform.position = new Vector3(transform.position.x+(direction.x*speed*currentSpeedModifier*Time.deltaTime),transform.position.y+(direction.y*speed*currentSpeedModifier*Time.deltaTime), transform.position.z);
-				if(transform.position.x<-20 || transform.position.x>20 || transform.position.y <-20 || transform.position.y > 20)
-				{
-					Debug.Log("destroy");
-					Destroy(gameObject);
-				}
+				
 			}
+		}
+		*/
+		transform.position = new Vector3(transform.position.x + (direction.x * speed * currentSpeedModifier * Time.deltaTime), transform.position.y + (direction.y * speed * currentSpeedModifier * Time.deltaTime), transform.position.z);
+		if (transform.position.x < -20 || transform.position.x > 20 || transform.position.y < -20 || transform.position.y > 20)
+		{
+			Debug.Log("destroy");
+			Destroy(gameObject);
 		}
 	}
 
