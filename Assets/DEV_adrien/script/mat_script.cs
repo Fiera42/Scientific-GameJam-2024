@@ -5,27 +5,29 @@ using UnityEngine;
 
 public class Material : MonoBehaviour {
 
-    [SerializeField] private GameObject[] materialList;
+    [SerializeField] private Molecule[] materialList;
     [SerializeField] private float[] speedInteractionList;
-    private Dictionary <GameObject, float> speedModification;
+    private Dictionary <Molecule, float> speedModification;
 
     void Start() {
         if(materialList.Length != speedInteractionList.Length) {
             throw new ArgumentException("Material list is not the same lenght as speed interaction list");
         }
 
-        speedModification = new Dictionary<GameObject, float>();
+        speedModification = new Dictionary<Molecule, float>();
 
         for(int i = 0; i < materialList.Length; i++){
             speedModification.Add(materialList[i], speedInteractionList[i]);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) {
-        Destroy(gameObject);
-    }
+    private void OnTriggerEnter2D(Collider2D collision) {
+        Molecule incomingMol = collision.gameObject.GetComponent<Molecule>();
 
-    private void OnDrawGizmos(){
-        Gizmos.color = Color.red;
+        foreach(Molecule mol in materialList) {
+            if(mol.Is(incomingMol)) {
+
+            }
+        }
     }
 }
