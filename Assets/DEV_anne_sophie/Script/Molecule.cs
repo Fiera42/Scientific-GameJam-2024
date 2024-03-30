@@ -19,7 +19,7 @@ public class Molecule : MonoBehaviour
 	//----------------------- PRIVATE
 	private int currentWaypointIndex = 0;
 	[HideInInspector] public Transform[] waypoints = new Transform[0];
-	private float currentSpeedModifier = 1;
+	[HideInInspector] public float currentSpeedModifier = 1;
 
 	void Start() {
         if(materialList.Length != speedInteractionList.Length) {

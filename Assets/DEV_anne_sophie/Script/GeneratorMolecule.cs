@@ -11,6 +11,10 @@ public class GeneratorMolecule : MonoBehaviour
 	[SerializeField] private Vector3 direction;
 
 	private Coroutine launchRoutine;
+
+	public void Start() {
+		LaunchGenerator();
+	}
 	public void LaunchGenerator()
 	{
 		launchRoutine = StartCoroutine(Launch());
