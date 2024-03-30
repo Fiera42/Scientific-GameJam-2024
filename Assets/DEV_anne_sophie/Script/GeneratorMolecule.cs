@@ -29,7 +29,7 @@ public class GeneratorMolecule : MonoBehaviour
 		Gizmos.color = Color.red;
 		Gizmos.DrawSphere(transform.position, .5f);
 		Gizmos.color = Color.yellow;
-		if (waypoints != null)
+		if (waypoints.Length>0)
 		{
 			Gizmos.DrawLine(transform.position, waypoints[0].position);
 			for (int i = 0; i < waypoints.Length - 1; i++)

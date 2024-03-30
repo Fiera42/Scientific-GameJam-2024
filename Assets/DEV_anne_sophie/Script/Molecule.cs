@@ -15,11 +15,11 @@ public class Molecule : MonoBehaviour
 	[Header("Interaction with materials")]
 	[SerializeField] private MaterialPropertySO[] materialList;
     [SerializeField] private float[] speedInteractionList;
-    private Dictionary <string, float> speedModifiers= new Dictionary<string, float>();
+    private Dictionary <string, float> speedModifiers = new Dictionary<string, float>();
 
 	//----------------------- PRIVATE
 	private int currentWaypointIndex = 0;
-	[HideInInspector] public Transform[] waypoints;
+	[HideInInspector] public Transform[] waypoints = new Transform[0];
 	private float currentSpeedModifier = 1f;
 
 	void Start() {
@@ -34,7 +34,7 @@ public class Molecule : MonoBehaviour
 
 	void Update()
 	{
-		if (waypoints != null && currentWaypointIndex < waypoints.Length)
+		if (waypoints.Length>0 && currentWaypointIndex < waypoints.Length)
 		{
 			Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
 

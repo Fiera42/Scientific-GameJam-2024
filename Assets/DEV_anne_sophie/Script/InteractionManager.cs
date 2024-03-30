@@ -1,14 +1,31 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractionManager : MonoBehaviour
 {
+    public List<GeneratorMolecule> allGenerator = new List<GeneratorMolecule>();
+    [SerializeField] private Button startButton;
+
     public static InteractionManager Instance;
 	private void Awake()
 	{
 		Instance = this;
 	}
+
+	private void Start()
+	{
+		startButton.onClick.AddListener(()=>StartAllGenerator());
+	}
+
+	public void StartAllGenerator()
+    {
+        foreach (var item in allGenerator)
+        {
+            item.LaunchGenerator();
+        }
+    }
 
 	[Serializable] public struct MoleculeInteraction
     {
