@@ -10,7 +10,7 @@ public class Molecule : MonoBehaviour
 	[SerializeField] private string nameMol;
 	public bool Is(Molecule mol) { return mol.nameMol == nameMol; }
 	public float speed = 5f;
-
+	public Vector3 direction;
 	//------------------------ MATERIALS
 	[Header("Interaction with materials")]
 	[SerializeField] private MaterialPropertySO[] materialList;
@@ -18,9 +18,22 @@ public class Molecule : MonoBehaviour
     private Dictionary <string, float> speedModifiers = new Dictionary<string, float>();
 
 	//----------------------- PRIVATE
-	private int currentWaypointIndex = 0;
-	[HideInInspector] public Transform[] waypoints = new Transform[0];
+	//private int currentWaypointIndex = 0;
+	//[HideInInspector] public Transform[] waypoints = new Transform[0];
 	private float currentSpeedModifier = 1f;
+
+	void changeDirection(char directionChange)
+	{
+		if(directionChange == 'd')
+		{
+            direction = new Vector3(direction.y, -direction.x, direction.z);
+		}
+		else
+		{
+			direction = new Vector3(-direction.y, direction.x, direction.z);
+
+        }
+    }
 
 	void Start() {
         if(materialList.Length != speedInteractionList.Length) {
@@ -44,7 +57,13 @@ public class Molecule : MonoBehaviour
 			}
 			else
 			{
-				transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * currentSpeedModifier * Time.deltaTime);
+				//transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * currentSpeedModifier * Time.deltaTime);
+				transform.position = new Vector3(transform.position.x+(direction.x*speed*currentSpeedModifier*Time.deltaTime),transform.position.y+(direction.y*speed*currentSpeedModifier*Time.deltaTime), transform.position.z);
+				if(transform.position.x<-20 || transform.position.x>20 || transform.position.y <-20 || transform.position.y > 20)
+				{
+					Debug.Log("destroy");
+					Destroy(gameObject);
+				}
 			}
 		}
 	}
@@ -59,7 +78,6 @@ public class Molecule : MonoBehaviour
 			Molecule newMol = InteractionManager.Instance.GetResult(this, collision.GetComponent<Molecule>());
 
 			if (newMol != null){
-				waypoints.CopyTo(newMol.waypoints, currentWaypointIndex);
 				Instantiate(newMol, transform.position, newMol.transform.rotation);
 				Destroy(collision.gameObject);
 				Destroy(this.gameObject);
@@ -73,8 +91,14 @@ public class Molecule : MonoBehaviour
 			if (speedModifiers.ContainsKey(collidedMat.typeOfMat.nameMetal)) {
 				currentSpeedModifier = speedModifiers[collidedMat.typeOfMat.nameMetal];
 			}
+			if (collidedMat.typeOfMat.direction)
+			{
+
+				this.changeDirection(collidedMat.typeOfMat.directionChange);
+			}
 		}
-	}
+
+    }
 
 	private void OnTriggerExit2D(Collider2D collision) {
 		if (collision.gameObject.layer == 6) {

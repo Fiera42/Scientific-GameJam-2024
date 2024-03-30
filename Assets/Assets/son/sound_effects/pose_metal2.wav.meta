@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 98dd7ab4f1946a744a44226cdeb6c886
+=======
+guid: 998d0591a9a545040be6f407b9e05398
+>>>>>>> alen
 AudioImporter:
   externalObjects: {}
   serializedVersion: 7
