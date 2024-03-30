@@ -113,10 +113,10 @@ GameObject:
   - component: {fileID: 1624648455322118715}
   - component: {fileID: 1514973285969675723}
   - component: {fileID: 281104503411757115}
-  - component: {fileID: 4968150403948983873}
-  - component: {fileID: 2733314769307878290}
+  - component: {fileID: 4695314236125293657}
+  - component: {fileID: 914273415517764243}
   m_Layer: 7
-  m_Name: H3COH
+  m_Name: HCOOH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,12 +179,12 @@ SpriteRenderer:
   m_SortingLayerID: 1395225705
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: bdacb3780ddf1fc48a9dabfafc643866, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76f5a1f37b71d684a9958790284fd291, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.4882812, y: 1.75}
+  m_Size: {x: 2.3164062, y: 1.4453125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -202,12 +202,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693794d7da1b9b9418dff3ba2f8fc0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameMol: H3COH
+  nameMol: HCOOH
   speed: 2
   materialList: []
   speedInteractionList: []
-  waypoints: []
---- !u!58 &4968150403948983873
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!58 &4695314236125293657
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,8 +246,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!50 &2733314769307878290
+  m_Radius: 0.2
+--- !u!50 &914273415517764243
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -303,8 +308,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -59.2}
-  m_SizeDelta: {x: 220, y: 50}
+  m_AnchoredPosition: {x: 0, y: -82.7}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5278110787439967469
 CanvasRenderer:
@@ -334,7 +339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "H<sub>3</sub>COH (m\xE9thanol)"
+  m_text: HCOOH
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
   m_sharedMaterial: {fileID: -4245277930741031594, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
@@ -361,19 +366,19 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -16.64
+  m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

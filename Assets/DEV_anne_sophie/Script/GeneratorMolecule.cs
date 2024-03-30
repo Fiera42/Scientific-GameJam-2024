@@ -37,7 +37,7 @@ public class GeneratorMolecule : MonoBehaviour
 	private void OnDrawGizmos()
 	{
 		Gizmos.color = Color.red;
-		Gizmos.DrawSphere(transform.position, .5f);
+		Gizmos.DrawSphere(transform.position, .2f);
 		Gizmos.color = Color.yellow;
 		if (waypoints.Length>0)
 		{
