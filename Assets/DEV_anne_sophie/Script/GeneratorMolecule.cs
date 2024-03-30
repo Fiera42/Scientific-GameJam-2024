@@ -50,4 +50,28 @@ public class GeneratorMolecule : MonoBehaviour
 			}
 		}
 	}
+
+    public GameObject prefabTile;
+    public void Start()
+    {
+		Transform previous = this.transform;
+        GameObject tile = null;
+
+        foreach (var i in waypoints)
+		{
+			int x = ((int)(previous.position.x - i.position.x));
+			int y = ((int)(previous.position.y - i.position.y));
+
+			if (x == 0) x = 1;
+			if (y == 0) y = 1;
+
+            tile = Instantiate(prefabTile);
+			tile.transform.localScale = new Vector3(x, y, 1);
+
+			tile.transform.position = new Vector3(previous.position.x - (x/2), previous.position.y - (y/2), previous.position.z);
+
+			previous = i;
+
+        }
+    }
 }
