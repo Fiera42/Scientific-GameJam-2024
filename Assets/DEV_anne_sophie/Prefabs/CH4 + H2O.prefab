@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 876509673255826222}
   - component: {fileID: 3496018751123395680}
   - component: {fileID: 5718902860228368159}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 1624648455322118715}
   - component: {fileID: 1514973285969675723}
   - component: {fileID: 281104503411757115}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CH4 + H2O
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,6 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameMol: CH4
   speed: 3
+  materialList: []
+  speedInteractionList: []
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -217,7 +219,7 @@ GameObject:
   - component: {fileID: 5321497691609759679}
   - component: {fileID: 5278110787439967469}
   - component: {fileID: 7914397020852261930}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
