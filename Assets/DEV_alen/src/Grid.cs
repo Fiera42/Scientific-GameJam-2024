@@ -1,82 +1,74 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.Jobs;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public List<List<Chemain>> grille;
+    public int tailleX = 10;
+    public int tailleY = 10;
 
-    private List<List<Chemain>> grille;
-    private int tailleX;
-    private int tailleY;
-
-    public GameObject cr;
-
-    private bool once = true;
+    public GameObject prefabTile;
+    private List<GameObject> createdObject;
+    public List<MaterialPropertySO> availableMaterial;
 
     public string getMaterial(int x, int y)
     {
         return this.grille[x][y].getMaterial();
-
     }
 
+
+    public void setMaterial(Chemain c, int x, int y)
+    {
+        this.grille[x][y] = c;
+    }
 
     void Start()
     {
+        createdObject = new List<GameObject>();
         this.grille = new List<List<Chemain>>();
-        tailleX = 10;
-        tailleY = 10;
-        GenerateGrid(10, 10);
-
-    }
-
-    private void GenerateGrid(int x, int y)
-    {
-
-        for (int i = 0; i < x; i++)
-        {
-            this.grille.Add(new List<Chemain>());
-            for (int j = 0; j < y; j++)
-            {
-                this.grille[i].Add(new Chemain());
-            }
-        }
+        Dessiner();
     }
 
     void Update()
     {
-        if (once) {
-            Dessiner();
-            once = false;
-        }
-
     }
-
+    
+    void ClearObject()
+    {
+        int size = createdObject.Count;
+        Debug.Log(size);
+        for (int i = 0; i < size; i++)
+        {
+            Destroy(createdObject[i]);
+        }
+        createdObject.Clear();
+    }
 
     public void Dessiner()
     {
-        GameObject referenceTile = Instantiate(cr);
+        GameObject tile = null;
 
         for (int i = 0; i < tailleX; i++)
         {
+            this.grille.Add(new List<Chemain>());
             for (int j = 0; j < tailleY; j++)
             {
-                switch (getMaterial(i, j))
+                tile = Instantiate(prefabTile, transform);
+                createdObject.Add(tile);
+                tile.transform.position = new Vector2(transform.root.position.x + i, transform.root.position.y - j);
+
+                this.grille[i].Add(tile.GetComponent<Chemain>());
+
+                if (Random.value < 0.02)
                 {
-                    case "base":
-                        GameObject tile = (GameObject)Instantiate(referenceTile, transform);
-                        Debug.Log(transform.root.position);
-
-                        tile.transform.position = new Vector2(transform.root.position.x +i, transform.root.position.y - j);
-                        break;
-
-                    default:
-                        Debug.Log("pas trouve");
-                        break;
+                    setMaterial(new Chemain("vert"), i, j);
                 }
+
             }
         }
-
-        Destroy(referenceTile);
     }
 }
