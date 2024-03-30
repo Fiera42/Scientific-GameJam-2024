@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f9b5cbc4be195c478e9fafd847eb288, type: 3}
-  m_Name: Platine
+  m_Name: AlFer
   m_EditorClassIdentifier: 
-  typeSprite: {fileID: 21300000, guid: 8e15d22ca268b204db4d9ae497f75bd0, type: 3}
-  nameMetal: Platine
-  speed: 10
+  typeSprite: {fileID: 21300000, guid: c90bf2edd54d4cb4bb18c3272d3e7171, type: 3}
+  nameMetal: Aluminium + Fer
+  speed: 50
   direction: 0
-  directionChange: 56
+  directionChange: 85

@@ -7,10 +7,9 @@ public class Molecule : MonoBehaviour
 
 	//------------------------ PARAMS
 	[Header("Params")]
-	[SerializeField] private string nameMol;
+	[SerializeField] private string nameMol; //H3COH = methanol
 	public bool Is(Molecule mol) { return mol.nameMol == nameMol; }
 	public float speed = 5f;
-	public Vector3 direction;
 	//------------------------ MATERIALS
 	[Header("Interaction with materials")]
 	[SerializeField] private MaterialPropertySO[] materialList;
@@ -18,22 +17,9 @@ public class Molecule : MonoBehaviour
     private Dictionary <string, float> speedModifiers = new Dictionary<string, float>();
 
 	//----------------------- PRIVATE
-	//private int currentWaypointIndex = 0;
-	//[HideInInspector] public Transform[] waypoints = new Transform[0];
-	private float currentSpeedModifier = 1f;
-
-	void changeDirection(char directionChange)
-	{
-		if(directionChange == 'd')
-		{
-            direction = new Vector3(direction.y, -direction.x, direction.z);
-		}
-		else
-		{
-			direction = new Vector3(-direction.y, direction.x, direction.z);
-
-        }
-    }
+	private int currentWaypointIndex = 0;
+	[HideInInspector] public Transform[] waypoints = new Transform[0];
+	private float currentSpeedModifier = 1;
 
 	void Start() {
         if(materialList.Length != speedInteractionList.Length) {
@@ -47,7 +33,6 @@ public class Molecule : MonoBehaviour
 
 	void Update()
 	{
-		/*
 		if (waypoints.Length>0 && currentWaypointIndex < waypoints.Length)
 		{
 			Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
@@ -55,19 +40,27 @@ public class Molecule : MonoBehaviour
 			if (direction.magnitude < 0.1f)
 			{
 				currentWaypointIndex++;
+				if (currentWaypointIndex >= waypoints.Length)
+				{
+					switch (nameMol) {//end game, verify if it's the right molecule
+						case "H3COH":
+							//win
+							Debug.Log("win");
+							break;
+						case "H":
+							Destroy(gameObject);
+							break;
+						default:
+							//loose
+							Debug.Log("loose");
+							break;
+					}
+				}
 			}
 			else
 			{
-				//transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * currentSpeedModifier * Time.deltaTime);
-				
+				transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * currentSpeedModifier * Time.deltaTime);
 			}
-		}
-		*/
-		transform.position = new Vector3(transform.position.x + (direction.x * speed * currentSpeedModifier * Time.deltaTime), transform.position.y + (direction.y * speed * currentSpeedModifier * Time.deltaTime), transform.position.z);
-		if (transform.position.x < -20 || transform.position.x > 20 || transform.position.y < -20 || transform.position.y > 20)
-		{
-			Debug.Log("destroy");
-			Destroy(gameObject);
 		}
 	}
 
@@ -81,6 +74,7 @@ public class Molecule : MonoBehaviour
 			Molecule newMol = InteractionManager.Instance.GetResult(this, collision.GetComponent<Molecule>());
 
 			if (newMol != null){
+				newMol.waypoints = waypoints;
 				Instantiate(newMol, transform.position, newMol.transform.rotation);
 				Destroy(collision.gameObject);
 				Destroy(this.gameObject);
@@ -93,11 +87,6 @@ public class Molecule : MonoBehaviour
 			if (collidedMat.typeOfMat == null) return;
 			if (speedModifiers.ContainsKey(collidedMat.typeOfMat.nameMetal)) {
 				currentSpeedModifier = speedModifiers[collidedMat.typeOfMat.nameMetal];
-			}
-			if (collidedMat.typeOfMat.direction)
-			{
-
-				this.changeDirection(collidedMat.typeOfMat.directionChange);
 			}
 		}
 
