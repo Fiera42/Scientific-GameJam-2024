@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 281104503411757115}
   - component: {fileID: 1023072888243039559}
   - component: {fileID: 2565057319796755414}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: H2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameMol: H2
   speed: 8
+  materialList:
+  - {fileID: 0}
+  speedInteractionList: []
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -180,7 +183,7 @@ GameObject:
   - component: {fileID: 4354188962543931847}
   - component: {fileID: 7585638322647533915}
   - component: {fileID: 8807176175040135992}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +284,7 @@ GameObject:
   - component: {fileID: 4046842133868320132}
   - component: {fileID: 764445123140582035}
   - component: {fileID: 9034903231645070467}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2327056832347369562}
   - component: {fileID: 5584893654740031342}
   - component: {fileID: 2685206321040672574}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 281104503411757115}
   - component: {fileID: 261285561109941769}
   - component: {fileID: 4479119130697147158}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CO2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,6 +236,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameMol: CO2
   speed: 5
+  materialList:
+  - {fileID: 8596140363891798470, guid: 7d04bc8dbf5d7ea46b50872c4d269678, type: 3}
+  speedInteractionList:
+  - 2
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -314,7 +318,7 @@ GameObject:
   - component: {fileID: 1341859680035194636}
   - component: {fileID: 2446091265616978654}
   - component: {fileID: 2652418340893833567}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
