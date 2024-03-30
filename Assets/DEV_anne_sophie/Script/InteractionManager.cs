@@ -21,7 +21,7 @@ public class InteractionManager : MonoBehaviour
 
     public Molecule GetResult(Molecule mol1, Molecule mol2)
     {
-        Debug.Log(mol1 +" == "+(moleculeInteraction[0].mol1) + " " + mol2 + " == "+(moleculeInteraction[0].mol2));
+        //Debug.Log(mol1 +" == "+(moleculeInteraction[0].mol1) + " " + mol2 + " == "+(moleculeInteraction[0].mol2));
 
 		foreach (var interaction in moleculeInteraction)
         {

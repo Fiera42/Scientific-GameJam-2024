@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f9b5cbc4be195c478e9fafd847eb288, type: 3}
-  m_Name: cuivre
+  m_Name: platine
   m_EditorClassIdentifier: 
   typeSprite: {fileID: 21300000, guid: 94271d866ff02674f8c2b51ef481c6d3, type: 3}
-  nameMetal: cuivre
+  nameMetal: Platine
   speed: 10

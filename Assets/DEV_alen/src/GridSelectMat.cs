@@ -20,15 +20,11 @@ public class GridSelectMat : MonoBehaviour
         {
             tile = Instantiate(prefabTile, transform);
             tile.GetComponent<Chemain>().SetMaterial(m);
+            tile.GetComponent<Chemain>().dragable = true;
             tile.transform.position = new Vector2(transform.root.position.x, transform.root.position.y - i);
             i++;
         }
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
