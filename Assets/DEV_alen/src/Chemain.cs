@@ -48,13 +48,25 @@ public class Chemain : MonoBehaviour
         isFollowingMouse = false;
         if (dragable)
         {
-			BoxCollider2D boxCollider = gameObject.GetComponent<BoxCollider2D>();
-			Collider2D[] overlap = Physics2D.OverlapAreaAll(boxCollider.bounds.min, boxCollider.bounds.max);
-            if (overlap.Length > 1)
+			//BoxCollider2D boxCollider = gameObject.GetComponent<BoxCollider2D>();
+			Collider2D[] overlap = Physics2D.OverlapPointAll((Vector2)transform.position);
+            if (overlap != null)
+			{
+                foreach (Collider2D col in overlap)
+                {
+                    if (col == GetComponent<Collider2D>()) continue;
+
+					Debug.Log(col.transform.gameObject);
+					col.transform.GetComponent<Chemain>().SetMaterial(this.typeOfMat);
+                    break;
+				}
+			}
+			//Collider2D[] overlap = Physics2D.OverlapAreaAll(boxCollider.bounds.min, boxCollider.bounds.max);
+            /*if (overlap.Length > 1)
             {
 				Debug.Log(overlap[1].transform.gameObject);
 				overlap[1].transform.GetComponent<Chemain>().SetMaterial(this.typeOfMat);
-			}
+			}*/
 			Destroy(gameObject);
         }
     }
