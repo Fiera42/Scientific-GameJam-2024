@@ -5146,7 +5146,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 1395225705
+  m_SortingLayerID: -204649455
   m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &7585638322647533915
@@ -5254,7 +5254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: H
+  m_text: H2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
   m_sharedMaterial: {fileID: -4245277930741031594, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
