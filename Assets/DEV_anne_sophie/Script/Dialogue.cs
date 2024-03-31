@@ -8,6 +8,7 @@ using System.IO;
 public class Dialogue : MonoBehaviour
 {
 	public TextMeshProUGUI textComponent;
+	[SerializeField] private Chercheuse chercheuse;
 	public string[] lines;
 	public float textSpeed;
 
@@ -42,11 +43,11 @@ public class Dialogue : MonoBehaviour
 		}
 	}
 
-	void StartDialogue()
-	{
+	void StartDialogue() {
 		index = 0;
 		textComponent.text = string.Empty;
 		StartCoroutine(TypeLine());
+		chercheuse.talk();
 	}
 
 	IEnumerator TypeLine()
@@ -57,6 +58,7 @@ public class Dialogue : MonoBehaviour
 			textComponent.text += c;
 			yield return new WaitForSeconds(textSpeed);
 		}
+		chercheuse.stopTalk();
 	}
 
 	void NextLine()
