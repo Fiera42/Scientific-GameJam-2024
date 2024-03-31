@@ -814,8 +814,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -204649455
-  m_SortingLayer: 2
+  m_SortingLayerID: -1661619781
+  m_SortingLayer: 1
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 6c915e318d4abb04ca428f63845055c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -987,11 +987,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2242430214606177896, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2242430214606177896, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: m_SortingLayerID
-      value: -204649455
+      value: -1661619781
       objectReference: {fileID: 0}
     - target: {fileID: 3812254454374257037, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: waitBeforeStart
@@ -1019,11 +1019,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 893824f97d130d24ab0014deb8507196, type: 3}
     - target: {fileID: 4054272565368321010, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4054272565368321010, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: m_SortingLayerID
-      value: -204649455
+      value: -1661619781
       objectReference: {fileID: 0}
     - target: {fileID: 5343729753601331355, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1344,8 +1344,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -204649455
-  m_SortingLayer: 2
+  m_SortingLayerID: -1661619781
+  m_SortingLayer: 1
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 1e778c6f3052c3f448937f7a070f83c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5409,6 +5409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 565504870}
+  chercheuse: {fileID: 0}
   lines:
   - "Bravo, tu viens d\u2019obtenir du m\xE9thanol ! Ce combustible est un pr\xE9cieux
     atout pour notre plan\xE8te et nous esp\xE9rons en faire le p\xE9trole de demain
@@ -6114,7 +6115,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -204649455
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: bdbfb43847afe0a4fba14c9191fc3919, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8006,7 +8007,7 @@ MonoBehaviour:
   - {fileID: 611674845}
   - {fileID: 1257833966}
   direction: {x: 0, y: 0, z: 0}
-  prefabTile: {fileID: 7992872365762294823, guid: 91d97c657b1ec6b4a9aa8eebd7fdf5b5, type: 3}
+  prefabTile: {fileID: 7992872365762294823, guid: 1dfc278f410837d4090390712d572e8a, type: 3}
 --- !u!4 &1547594090
 Transform:
   m_ObjectHideFlags: 0
@@ -8814,7 +8815,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -204649455
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 6c915e318d4abb04ca428f63845055c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8898,7 +8899,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -204649455
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 6c915e318d4abb04ca428f63845055c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9232,6 +9233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1663668320}
+  chercheuse: {fileID: 0}
   lines:
   - "Attention! \xC9vitez de faire se toucher deux atomes d'hydrog\xE8ne"
   - "Soyez vigilant et gardez-les s\xE9par\xE9s pour r\xE9ussir. Bonne chance!"
@@ -10515,7 +10517,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1395225705
-  m_SortingLayer: 0
+  m_SortingLayer: 2
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 8a779d03d3a60f548885388506126376, type: 3}
   m_Color: {r: 0.17254902, g: 0.17254902, b: 0.1764706, a: 1}
@@ -10729,11 +10731,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2242430214606177896, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2242430214606177896, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: m_SortingLayerID
-      value: -204649455
+      value: -1661619781
       objectReference: {fileID: 0}
     - target: {fileID: 3812254454374257037, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: waypoints.Array.size
@@ -10769,11 +10771,11 @@ PrefabInstance:
       objectReference: {fileID: 1257833966}
     - target: {fileID: 4054272565368321010, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4054272565368321010, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: m_SortingLayerID
-      value: -204649455
+      value: -1661619781
       objectReference: {fileID: 0}
     - target: {fileID: 5343729753601331355, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: m_LocalPosition.x
