@@ -86,6 +86,11 @@ public class Chemain : MonoBehaviour
         }
     }
 
+    public void OnMouseExit(){
+        this.GetComponent<SpriteRenderer>().sprite = typeOfMat.typeSprite;
+    }
 
-
+    public void OnMouseEnter(){
+        this.GetComponent<SpriteRenderer>().sprite = typeOfMat.selectSprite;
+    }
 }
