@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - MusicPlayer
+  - cout
+  - LevelButton
   layers:
   - Default
   - TransparentFX
@@ -42,9 +44,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Quadrillage
+    uniqueID: 3091425567
+    locked: 0
   - name: Generator
     uniqueID: 2633347515
     locked: 0
+  - name: Chemins
+    uniqueID: 4153992111
+    locked: 0
   - name: Molecule
     uniqueID: 1395225705
+    locked: 0
+  - name: Cachage
+    uniqueID: 1778936753
     locked: 0
