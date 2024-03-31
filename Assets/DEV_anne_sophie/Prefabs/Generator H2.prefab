@@ -46,13 +46,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd1fb2e3ce9b7d4481faef4fa077347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  molecule: {fileID: 281104503411757115, guid: bc6872abf9bed9844a62f1a55ad128fd, type: 3}
+  molecule: {fileID: 0}
   nbrMol: 1
   speedInstance: 1
   waitBeforeStart: 0
   waypoints:
   - {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
+  prefabTile: {fileID: 7992872365762294823, guid: 91d97c657b1ec6b4a9aa8eebd7fdf5b5, type: 3}
 --- !u!1 &2755494597321594550
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +125,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1395225705
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 1e778c6f3052c3f448937f7a070f83c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -208,7 +209,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1395225705
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 6c915e318d4abb04ca428f63845055c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
