@@ -1,7 +1,4 @@
 using UnityEngine;
-using TMPro;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
 
 public class Chemain : MonoBehaviour
 {
@@ -9,13 +6,18 @@ public class Chemain : MonoBehaviour
     public MaterialPropertySO typeOfMat;
     public bool dragable = false;
 
-    private TMP_Text t;
-    private int prix = 0;
+    [HideInInspector] public bool isOnTable = false;
+    private Sprite spriteAtStart;
 
-    public void SetMaterial(MaterialPropertySO mat)
+	private void Start()
+	{
+		spriteAtStart = GetComponent<SpriteRenderer>().sprite;
+	}
+
+	public void SetMaterial(MaterialPropertySO mat)
     {
         typeOfMat = mat;
-        if(mat == null) this.GetComponent<SpriteRenderer>().sprite = null;
+        if(mat == null) this.GetComponent<SpriteRenderer>().sprite = spriteAtStart;
 		else this.GetComponent<SpriteRenderer>().sprite = mat.typeSprite;
     }
 
@@ -36,22 +38,33 @@ public class Chemain : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (InteractionManager.Instance.isPlaying) return;
+
         if (dragable)
         {
-            Instantiate(this.gameObject, this.transform.position, Quaternion.identity);
+            Instantiate(this.gameObject, this.transform.position, Quaternion.identity, transform.parent);
             isFollowingMouse = true;
             transform.position = new Vector3(transform.position.x, transform.position.y, -1);
-
         }
+        else if (isOnTable)
+        {
+            dragable = true;
+			Instantiate(NewBehaviourScript.Instance.prefabTile, this.transform.position, Quaternion.identity, NewBehaviourScript.Instance.gameObject.transform);
+			isFollowingMouse = true;
+			transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+			PrixManager._activePrixManager.UpdatePrix(-this.typeOfMat.price);
+		}
 
     }
 
     void OnMouseUp()
-    {
-        isFollowingMouse = false;
+	{
+		if (InteractionManager.Instance.isPlaying) return;
+
+		isFollowingMouse = false;
+        isOnTable = false;
         if (dragable)
         {
-			//BoxCollider2D boxCollider = gameObject.GetComponent<BoxCollider2D>();
 			Collider2D[] overlap = Physics2D.OverlapPointAll((Vector2)transform.position);
             if (overlap != null)
 			{
@@ -59,9 +72,13 @@ public class Chemain : MonoBehaviour
                 {
                     if (col == GetComponent<Collider2D>()) continue;
                     if (col.transform.GetComponent<Chemain>() == null) continue;
+                    if(col.transform.GetComponent<Chemain>().dragable)continue;
 
-					col.transform.GetComponent<Chemain>().SetMaterial(this.typeOfMat);
-                    PrixManager._activePrixManager.UpdatePrix(this.typeOfMat.price);
+                    if (PrixManager._activePrixManager.UpdatePrix(this.typeOfMat.price))
+                    {
+					    col.transform.GetComponent<Chemain>().SetMaterial(this.typeOfMat);
+					    col.transform.GetComponent<Chemain>().isOnTable = true;
+                    }
                     break;
 				}
 			}

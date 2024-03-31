@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ public class Molecule : MonoBehaviour
 	//----------------------- PRIVATE
 	private int currentWaypointIndex = 0;
 	[HideInInspector] public Transform[] waypoints = new Transform[0];
-	private float currentSpeedModifier = 1;
+	[HideInInspector] public float currentSpeedModifier = 1;
 
 	void Start() {
         if(materialList.Length != speedInteractionList.Length) {
@@ -46,6 +47,8 @@ public class Molecule : MonoBehaviour
 						case "H3COH":
 							//win
 							Debug.Log("win");
+							AudioManager.instance.PlayWin();
+							StartCoroutine(AnimateSprite());
 							break;
 						case "H":
 							Destroy(gameObject);
@@ -53,6 +56,9 @@ public class Molecule : MonoBehaviour
 						default:
 							//loose
 							Debug.Log("loose");
+							AudioManager.instance.PlayLose();
+							InteractionManager.Instance.isPlaying = false;
+							StartCoroutine(Disapear());
 							break;
 					}
 				}
@@ -64,8 +70,6 @@ public class Molecule : MonoBehaviour
 		}
 	}
 
-	
-
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 
@@ -75,7 +79,7 @@ public class Molecule : MonoBehaviour
 
 			if (newMol != null){
 				newMol.waypoints = waypoints;
-				Instantiate(newMol, transform.position, newMol.transform.rotation);
+				Instantiate(newMol, transform.position, newMol.transform.rotation, transform.parent);
 				Destroy(collision.gameObject);
 				Destroy(this.gameObject);
 			}
@@ -99,5 +103,61 @@ public class Molecule : MonoBehaviour
 	}
 
 	
+	///// ANIMATIONS
 
+	private IEnumerator Disapear(float shrinkSpeed = .1f, float rotationSpeed = 50f, float minimumScale = 0.01f)
+	{
+		do
+		{
+			transform.localScale -= Vector3.one * shrinkSpeed * Time.deltaTime;
+			transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
+
+			if (transform.localScale.x < minimumScale)
+			{
+				Destroy(gameObject);
+				yield break;
+			}
+
+			yield return null;
+		} while (true);
+	}
+
+
+
+	IEnumerator AnimateSprite()
+	{
+		yield return JumpRoutine();
+		yield return JumpRoutine();
+
+		InteractionManager.Instance.windowWin.SetActive(true);
+
+		yield return RotateRoutine();
+
+	}
+
+	IEnumerator JumpRoutine(float duration = 0.5f)
+	{
+		Vector3 startPos = transform.position;
+
+		float elapsedTime = 0f;
+		while (elapsedTime < duration)
+		{
+			float t = Mathf.Clamp01(elapsedTime / duration);
+			transform.position = Vector3.Lerp(startPos, startPos, t - Mathf.Sin(t * Mathf.PI) * 0.5f);
+
+			elapsedTime += Time.deltaTime;
+			yield return null;
+		}
+
+		transform.position = startPos;
+	}
+
+	IEnumerator RotateRoutine(float speed = 180f)
+	{
+		while (true)
+		{
+			transform.Rotate(Vector3.forward, speed * Time.deltaTime);
+			yield return null;
+		}
+	}
 }

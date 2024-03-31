@@ -8,7 +8,9 @@ public class InteractionManager : MonoBehaviour
     public List<GeneratorMolecule> allGenerator = new List<GeneratorMolecule>();
     [SerializeField] private Button startButton;
     [SerializeField] private Button restartButton;
-	[SerializeField] private NewBehaviourScript grid;
+    public GameObject windowWin;
+
+    [HideInInspector] public bool isPlaying = false;
 
 	public static InteractionManager Instance;
 	private void Awake()
@@ -24,7 +26,9 @@ public class InteractionManager : MonoBehaviour
 
 	public void StartAllGenerator()
     {
-        foreach (var item in allGenerator)
+        isPlaying = true;
+
+		foreach (var item in allGenerator)
         {
             item.LaunchGenerator();
         }
@@ -32,7 +36,9 @@ public class InteractionManager : MonoBehaviour
 
     public void RemoveAll()
     {
-        grid.InitMaterial();
+        isPlaying = false;
+        PrixManager._activePrixManager.Init();
+		NewBehaviourScript.Instance.InitMaterial(); //grid
 		foreach (var item in allGenerator)
 		{
 			item.StopGenerator();
@@ -44,6 +50,7 @@ public class InteractionManager : MonoBehaviour
         public Molecule mol1;
         public Molecule mol2;
         public Molecule molResult;
+        public AudioClip soundMerge;
     }
 
     public List<MoleculeInteraction> moleculeInteraction;
@@ -57,6 +64,7 @@ public class InteractionManager : MonoBehaviour
             if ((mol1.Is(interaction.mol1) && mol2.Is(interaction.mol2)) 
                 /*|| (mol1.Is(interaction.mol2) && mol2.Is(interaction.mol1))*/)
             {
+                if(interaction.soundMerge != null) AudioManager.instance.PlaySFX(interaction.soundMerge);
                 return interaction.molResult;
             }
         }
