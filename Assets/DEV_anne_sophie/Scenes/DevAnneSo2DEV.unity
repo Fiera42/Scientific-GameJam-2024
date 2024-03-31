@@ -810,6 +810,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3812254454374257037, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
+      propertyPath: molecule
+      value: 
+      objectReference: {fileID: 281104503411757115, guid: bc6872abf9bed9844a62f1a55ad128fd, type: 3}
+    - target: {fileID: 3812254454374257037, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 506194867}
@@ -5043,6 +5047,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 2134197609}
   direction: {x: 0, y: 0, z: 0}
+  prefabTile: {fileID: 7992872365762294823, guid: 91d97c657b1ec6b4a9aa8eebd7fdf5b5, type: 3}
 --- !u!4 &539127533
 Transform:
   m_ObjectHideFlags: 0
@@ -7242,6 +7247,7 @@ MonoBehaviour:
   waitBeforeStart: 0
   waypoints: []
   direction: {x: 0, y: 0, z: 0}
+  prefabTile: {fileID: 7992872365762294823, guid: 91d97c657b1ec6b4a9aa8eebd7fdf5b5, type: 3}
 --- !u!4 &1463504658
 Transform:
   m_ObjectHideFlags: 0
@@ -7429,6 +7435,7 @@ MonoBehaviour:
   - {fileID: 984760647}
   - {fileID: 1257833966}
   direction: {x: 0, y: 0, z: 0}
+  prefabTile: {fileID: 7992872365762294823, guid: 91d97c657b1ec6b4a9aa8eebd7fdf5b5, type: 3}
 --- !u!4 &1547594090
 Transform:
   m_ObjectHideFlags: 0
@@ -9947,6 +9954,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Generator H2 - 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3812254454374257037, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
+      propertyPath: molecule
+      value: 
+      objectReference: {fileID: 281104503411757115, guid: bc6872abf9bed9844a62f1a55ad128fd, type: 3}
     - target: {fileID: 3812254454374257037, guid: 4396848922a930a4eaeca15cc63ffdef, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
