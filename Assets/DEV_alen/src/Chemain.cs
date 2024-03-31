@@ -43,6 +43,7 @@ public class Chemain : MonoBehaviour
         if (dragable)
         {
             Instantiate(this.gameObject, this.transform.position, Quaternion.identity, transform.parent);
+            PlaySound();
             isFollowingMouse = true;
             transform.position = new Vector3(transform.position.x, transform.position.y, -1);
         }
@@ -50,6 +51,7 @@ public class Chemain : MonoBehaviour
         {
             dragable = true;
 			Instantiate(NewBehaviourScript.Instance.prefabTile, this.transform.position, Quaternion.identity, NewBehaviourScript.Instance.gameObject.transform);
+			PlaySound();
 			isFollowingMouse = true;
 			transform.position = new Vector3(transform.position.x, transform.position.y, -1);
 			PrixManager._activePrixManager.UpdatePrix(-this.typeOfMat.price);
@@ -76,8 +78,13 @@ public class Chemain : MonoBehaviour
 
                     if (PrixManager._activePrixManager.UpdatePrix(this.typeOfMat.price))
                     {
-					    col.transform.GetComponent<Chemain>().SetMaterial(this.typeOfMat);
-					    col.transform.GetComponent<Chemain>().isOnTable = true;
+                        PlaySound();
+                        col.transform.GetComponent<Chemain>().SetMaterial(this.typeOfMat);
+                        col.transform.GetComponent<Chemain>().isOnTable = true;
+                    }
+                    else
+                    {
+                        AudioManager.instance.PlaynoMoney();
                     }
                     break;
 				}
@@ -87,10 +94,29 @@ public class Chemain : MonoBehaviour
     }
 
     public void OnMouseExit(){
-        this.GetComponent<SpriteRenderer>().sprite = typeOfMat.typeSprite;
+        if(typeOfMat) this.GetComponent<SpriteRenderer>().sprite = typeOfMat.typeSprite;
     }
 
     public void OnMouseEnter(){
-        this.GetComponent<SpriteRenderer>().sprite = typeOfMat.selectSprite;
+       if(typeOfMat) this.GetComponent<SpriteRenderer>().sprite = typeOfMat.selectSprite;
+    }
+
+    private void PlaySound()
+    {
+        switch (typeOfMat.name)
+        {
+            case "Fer":
+                AudioManager.instance.PlayFer();
+                break;
+			case "AlFer":
+				AudioManager.instance.PlayAlFer();
+				break;
+			case "Aluminium":
+				AudioManager.instance.PlayAl();
+				break;
+			case "platine":
+				AudioManager.instance.PlayPlatine();
+				break;
+		}
     }
 }

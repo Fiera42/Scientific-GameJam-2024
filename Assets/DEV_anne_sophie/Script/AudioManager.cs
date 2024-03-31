@@ -65,6 +65,7 @@ public class AudioManager : MonoBehaviour
 	[Header("UI buttons sounds")]
 	[SerializeField] private AudioClip uiHover;
 	[SerializeField] private AudioClip uiSelect;
+	[SerializeField] private AudioClip noMoney;
 	public void PlayUIHoverEvent()
 	{
 		if (uiHover != null) PlaySFX(uiHover);
@@ -74,6 +75,11 @@ public class AudioManager : MonoBehaviour
 	{
 		if (uiSelect != null) PlaySFX(uiSelect);
 		else Debug.LogWarning("No sound for clicking button");
+	}
+	public void PlaynoMoney()
+	{
+		if (noMoney != null) PlaySFX(noMoney);
+		else Debug.LogWarning("No sound for no money");
 	}
 
 	#endregion

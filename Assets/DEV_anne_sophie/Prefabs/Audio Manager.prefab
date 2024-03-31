@@ -146,20 +146,21 @@ MonoBehaviour:
   sfxAudioSource: {fileID: 8870818420050751455}
   uiHover: {fileID: 8300000, guid: 26abde8f551156646abb33b72f9e3ffa, type: 3}
   uiSelect: {fileID: 8300000, guid: 26abde8f551156646abb33b72f9e3ffa, type: 3}
+  noMoney: {fileID: 8300000, guid: c96e879f3e8241f4cbb924b0dde2a9c5, type: 3}
   win: {fileID: 8300000, guid: 2d6069e50b4666f46870132020c9508b, type: 3}
   loose: {fileID: 8300000, guid: c9e50858512838e44afb1b2e0f7f4ee7, type: 3}
   bell:
-  - {fileID: 8300000, guid: 0b383565f43341345a6b2ee287c77447, type: 3}
-  - {fileID: 8300000, guid: bf68b37d65899f0488f4f2d1be5bd3c2, type: 3}
-  - {fileID: 8300000, guid: 07fbb74e48c4c7242b0937657c915a28, type: 3}
+  - {fileID: 8300000, guid: 05026f66a0c0f264090f785f64b35e98, type: 3}
+  - {fileID: 8300000, guid: 4406a9f08c21e41459d4121058fa1bb5, type: 3}
+  - {fileID: 8300000, guid: 11c2d787eeb21b44aa031e281ac9b9ce, type: 3}
   bongo:
-  - {fileID: 8300000, guid: f3ea378fa74badf4496aeee304f1c716, type: 3}
-  - {fileID: 8300000, guid: 17f0020d03edbe54890fa63780bbaf15, type: 3}
-  - {fileID: 8300000, guid: b72f457424e56984092fea4a7d9cf278, type: 3}
+  - {fileID: 8300000, guid: 6283f1bf8e3fe1b4a8a68b56b19a58aa, type: 3}
+  - {fileID: 8300000, guid: d27d96d80f9683c4683f0cb0d7bdb11c, type: 3}
+  - {fileID: 8300000, guid: 5c54203ee957065489bfdb49b52adc38, type: 3}
   glass:
-  - {fileID: 8300000, guid: 076ca8b622136d548aa34452d7d1bfbf, type: 3}
-  - {fileID: 8300000, guid: 7f6670e6571e7784eb8510d7c34b8467, type: 3}
-  - {fileID: 8300000, guid: 86a8b8ea65e16be4187ea105a5a1234a, type: 3}
+  - {fileID: 8300000, guid: 6d69fa2cc41e76c4fa7bb0ce202b1b76, type: 3}
+  - {fileID: 8300000, guid: 5d7151217e3748d46a8aea3b178d47ff, type: 3}
+  - {fileID: 8300000, guid: ab0454a68a2c42a4285563c9cbdad541, type: 3}
   tap:
   - {fileID: 8300000, guid: ad2299e1e0f1cb74b9ea4395fc6ffa05, type: 3}
   - {fileID: 8300000, guid: fbd9347a29ed1824b939c3b5299855d4, type: 3}
