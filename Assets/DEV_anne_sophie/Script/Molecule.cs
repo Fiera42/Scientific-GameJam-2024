@@ -128,9 +128,11 @@ public class Molecule : MonoBehaviour
 	{
 		yield return JumpRoutine();
 		yield return JumpRoutine();
+
+		InteractionManager.Instance.windowWin.SetActive(true);
+
 		yield return RotateRoutine();
 
-		//victoryWindow.SetActive(true);
 	}
 
 	IEnumerator JumpRoutine(float duration = 0.5f)

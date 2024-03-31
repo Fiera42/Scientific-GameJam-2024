@@ -8,6 +8,7 @@ public class InteractionManager : MonoBehaviour
     public List<GeneratorMolecule> allGenerator = new List<GeneratorMolecule>();
     [SerializeField] private Button startButton;
     [SerializeField] private Button restartButton;
+    public GameObject windowWin;
 
     [HideInInspector] public bool isPlaying = false;
 
