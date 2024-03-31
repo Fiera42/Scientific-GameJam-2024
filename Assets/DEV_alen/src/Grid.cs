@@ -11,7 +11,13 @@ public class NewBehaviourScript : MonoBehaviour
     private List<GameObject> createdObject;
     public List<MaterialPropertySO> availableMaterial;
 
-    public string getMaterial(int x, int y)
+    public static NewBehaviourScript Instance;
+	private void Awake()
+	{
+		 Instance = this;
+	}
+
+	public string getMaterial(int x, int y)
     {
         return this.grille[x][y].getMaterial();
     }
@@ -29,33 +35,30 @@ public class NewBehaviourScript : MonoBehaviour
         Dessiner();
     }
 
-    void Update()
-    {
-    }
-    
-    void ClearObject()
-    {
-        int size = createdObject.Count;
-        Debug.Log(size);
-        for (int i = 0; i < size; i++)
-        {
-            Destroy(createdObject[i]);
-        }
-        createdObject.Clear();
-    }
-
     public void InitMaterial()
     {
-        foreach (var line in grille)
+        for (int i = 0; i < this.grille.Count; i++)
         {
-            foreach (var row in line)
+            for (int j = 0; j < this.grille[i].Count; j++)
             {
-                row.GetComponent<Chemain>().SetMaterial(null);
+                if (this.grille[i][j] == null)
+                {
+					GameObject tile = Instantiate(prefabTile, transform);
+					createdObject.Add(tile);
+					tile.transform.position = new Vector2(transform.root.position.x + i, transform.root.position.y - j);
+
+					grille[i][j] = tile.GetComponent<Chemain>();
+				}
+                else
+                {
+                    grille[i][j].SetMaterial(null);
+                    grille[i][j].gameObject.GetComponent<SpriteRenderer>().sprite = prefabTile.GetComponent<SpriteRenderer>().sprite;
+				}
             }
         }
     }
 
-    public void Dessiner()
+	public void Dessiner()
     {
         GameObject tile = null;
 

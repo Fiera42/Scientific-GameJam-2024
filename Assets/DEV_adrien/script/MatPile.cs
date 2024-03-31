@@ -14,6 +14,6 @@ public class MatPile : MonoBehaviour {
     }
 
     public void generateNewMaterial() {
-        GameObject.Instantiate(myMaterial, transform);
+        Instantiate(myMaterial, transform);
     }
 }

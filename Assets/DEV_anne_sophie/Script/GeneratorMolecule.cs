@@ -12,15 +12,16 @@ public class GeneratorMolecule : MonoBehaviour
 
 	private Coroutine launchRoutine;
 
-	public void Start() {
-		LaunchGenerator();
-	}
 	public void LaunchGenerator()
 	{
 		launchRoutine = StartCoroutine(Launch());
 	}
 	public void StopGenerator()
 	{
+		foreach (var molecules in GetComponentsInChildren<Molecule>())
+		{
+			Destroy(molecules.gameObject);
+		}
 		if (launchRoutine == null) return;
 
 		StopCoroutine(launchRoutine);
@@ -32,7 +33,7 @@ public class GeneratorMolecule : MonoBehaviour
 		yield return new WaitForSeconds(waitBeforeStart);
 		for (int i = 0; i < nbrMol; i++)
 		{
-			Molecule newMol = Instantiate(molecule, transform.position, molecule.transform.rotation);
+			Molecule newMol = Instantiate(molecule, transform.position, molecule.transform.rotation, transform);
 			newMol.waypoints = waypoints;
             yield return new WaitForSeconds(speedInstance);
 		}

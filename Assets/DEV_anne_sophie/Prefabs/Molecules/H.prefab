@@ -113,6 +113,7 @@ MonoBehaviour:
   - 0.25
   - 3
   waypoints: []
+  currentSpeedModifier: 1
 --- !u!58 &1023072888243039559
 CircleCollider2D:
   m_ObjectHideFlags: 0

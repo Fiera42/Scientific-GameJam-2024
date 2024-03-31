@@ -209,9 +209,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  currentSpeedModifier: 1
 --- !u!58 &5299469708445168016
 CircleCollider2D:
   m_ObjectHideFlags: 0
