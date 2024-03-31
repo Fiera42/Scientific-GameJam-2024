@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AlFer
   m_EditorClassIdentifier: 
   typeSprite: {fileID: 21300000, guid: c90bf2edd54d4cb4bb18c3272d3e7171, type: 3}
+  selectSprite: {fileID: 21300000, guid: 8aa6c755629171448bd08acca3360869, type: 3}
   nameMetal: Aluminium + Fer
   speed: 50
   price: 50

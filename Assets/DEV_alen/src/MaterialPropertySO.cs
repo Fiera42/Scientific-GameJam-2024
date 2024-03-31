@@ -6,6 +6,7 @@ using UnityEngine;
 public class MaterialPropertySO : ScriptableObject
 {
     public Sprite typeSprite;
+    public Sprite selectSprite;
     public string nameMetal;
     public float speed;
     //public bool direction;
