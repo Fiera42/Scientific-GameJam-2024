@@ -19,7 +19,7 @@ public class Molecule : MonoBehaviour
 
 	//----------------------- PRIVATE
 	private int currentWaypointIndex = 0;
-	[HideInInspector] public Transform[] waypoints = new Transform[0];
+	[HideInInspector] public Transform[] waypoints;
 	[HideInInspector] public float currentSpeedModifier = 1;
 
 	void Start() {
@@ -77,8 +77,11 @@ public class Molecule : MonoBehaviour
 		if (collision.gameObject.layer == 7) {
 			Molecule newMol = InteractionManager.Instance.GetResult(this, collision.GetComponent<Molecule>());
 
-			if (newMol != null){
-				newMol.waypoints = waypoints;
+			if (newMol != null)
+			{
+				newMol.waypoints = new Transform[waypoints.Length-currentWaypointIndex];
+				waypoints.CopyTo(newMol.waypoints, currentWaypointIndex);
+				Debug.Log(currentWaypointIndex);
 				Instantiate(newMol, transform.position, newMol.transform.rotation, transform.parent);
 				Destroy(collision.gameObject);
 				Destroy(this.gameObject);

@@ -47,7 +47,7 @@ public class Dialogue : MonoBehaviour
 		index = 0;
 		textComponent.text = string.Empty;
 		StartCoroutine(TypeLine());
-		chercheuse.talk();
+		if(chercheuse != null) chercheuse.talk();
 	}
 
 	IEnumerator TypeLine()
@@ -58,7 +58,7 @@ public class Dialogue : MonoBehaviour
 			textComponent.text += c;
 			yield return new WaitForSeconds(textSpeed);
 		}
-		chercheuse.stopTalk();
+		if (chercheuse != null) chercheuse.stopTalk();
 	}
 
 	void NextLine()

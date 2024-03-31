@@ -8,7 +8,6 @@ public class Game_handler : MonoBehaviour
     [Header("References")]
     private GameObject[] buttonLevel;
     public GameObject endGamePannel;
-    public GameObject musicPlayer;
     public GameObject cam;
     public GameObject transitionScreen;
     public Texture2D normalCursor;
@@ -34,9 +33,6 @@ public class Game_handler : MonoBehaviour
     }
 
     public void loadLevel(int i) { //called by the level selection menu
-        //change the music
-        musicPlayer = GameObject.FindGameObjectWithTag("MusicPlayer");
-        Destroy(musicPlayer);
 
         //smooth transition, so wait a litle
         StartCoroutine(transition());
@@ -47,8 +43,7 @@ public class Game_handler : MonoBehaviour
     }
 
     public void loadNextLevel() { //same, but with a different index (called at the end of a level)
-        musicPlayer = GameObject.FindGameObjectWithTag("MusicPlayer");
-        Destroy(musicPlayer);
+
         StartCoroutine(transition());
         StartCoroutine(loadLevelRoutine(0.55f, SceneManager.GetActiveScene().buildIndex + 1));
     }
@@ -68,10 +63,6 @@ public class Game_handler : MonoBehaviour
     }
 
     public void returnToMenu() { //called by menu buttons of levels
-
-        //change the music
-        musicPlayer = GameObject.FindGameObjectWithTag("MusicPlayer");
-        Destroy(musicPlayer);
 
         //smooth transition
         StartCoroutine(transition());
