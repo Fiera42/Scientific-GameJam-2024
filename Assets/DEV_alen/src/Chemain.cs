@@ -52,6 +52,7 @@ public class Chemain : MonoBehaviour
 			Instantiate(NewBehaviourScript.Instance.prefabTile, this.transform.position, Quaternion.identity, NewBehaviourScript.Instance.gameObject.transform);
 			isFollowingMouse = true;
 			transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+			PrixManager._activePrixManager.UpdatePrix(-this.typeOfMat.price);
 		}
 
     }
@@ -72,10 +73,12 @@ public class Chemain : MonoBehaviour
                     if (col == GetComponent<Collider2D>()) continue;
                     if (col.transform.GetComponent<Chemain>() == null) continue;
                     if(col.transform.GetComponent<Chemain>().dragable)continue;
-					col.transform.GetComponent<Chemain>().SetMaterial(this.typeOfMat);
-					col.transform.GetComponent<Chemain>().isOnTable = true;
 
-					PrixManager._activePrixManager.UpdatePrix(this.typeOfMat.price);
+                    if (PrixManager._activePrixManager.UpdatePrix(this.typeOfMat.price))
+                    {
+					    col.transform.GetComponent<Chemain>().SetMaterial(this.typeOfMat);
+					    col.transform.GetComponent<Chemain>().isOnTable = true;
+                    }
                     break;
 				}
 			}

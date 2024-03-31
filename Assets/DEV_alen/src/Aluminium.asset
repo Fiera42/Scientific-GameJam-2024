@@ -15,5 +15,4 @@ MonoBehaviour:
   typeSprite: {fileID: 21300000, guid: fde899d948c246846bc2511db2dfb955, type: 3}
   nameMetal: Aluminium
   speed: 10
-  direction: 0
-  directionChange: 85
+  price: 20
