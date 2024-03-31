@@ -15,4 +15,4 @@ MonoBehaviour:
   typeSprite: {fileID: 21300000, guid: 559eff4090a02684e9ff341deb027a23, type: 3}
   nameMetal: Fer
   speed: 15
-  price: 10
+  price: 25

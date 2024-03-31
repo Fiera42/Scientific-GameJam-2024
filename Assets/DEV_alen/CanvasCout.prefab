@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textToModify: {fileID: 1377836796676329741}
-  coutStart: 2800
+  coutStart: 350
 --- !u!1 &4959659541596452770
 GameObject:
   m_ObjectHideFlags: 0

@@ -419,7 +419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "10<size=80%> pi\xE8ces</size>"
+  m_text: "25<size=80%> pi\xE8ces</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
   m_sharedMaterial: {fileID: -4245277930741031594, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
@@ -5528,7 +5528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5998947257917533606, guid: 1fdac60eb48fc1145978843066315a2b, type: 3}
       propertyPath: coutStart
-      value: 150
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6142109497135811139, guid: 1fdac60eb48fc1145978843066315a2b, type: 3}
       propertyPath: m_Pivot.x
@@ -6215,7 +6215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "20<size=80%> pi\xE8ces</size>"
+  m_text: "10<size=80%> pi\xE8ces</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
   m_sharedMaterial: {fileID: -4245277930741031594, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
@@ -8846,7 +8846,7 @@ MonoBehaviour:
   chercheuse: {fileID: 0}
   lines:
   - "Hop hop hop ! Le platine c\u2019est super mais \xE7a co\xFBte cher !"
-  - "Tiens, ton budget : 150 pi\xE8ces, tu ne peux pas le d\xE9passer. Eh oui, la
+  - "Tiens, ton budget : 400 pi\xE8ces, tu ne peux pas le d\xE9passer. Eh oui, la
     science co\xFBte cher ! Mais ce n\u2019est pas grave, il y a du fer \xE0 utiliser
     ou de l\u2019aluminium. Essaye de cr\xE9er du m\xE9thanol !"
   textSpeed: 0.02

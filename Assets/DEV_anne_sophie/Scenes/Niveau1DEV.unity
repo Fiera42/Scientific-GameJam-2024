@@ -5362,6 +5362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 565504870}
+  chercheuse: {fileID: 0}
   lines:
   - "Bravo, tu viens d\u2019obtenir du m\xE9thanol ! Ce combustible est un pr\xE9cieux
     atout pour notre plan\xE8te et nous esp\xE9rons en faire le p\xE9trole de demain
@@ -5759,6 +5760,10 @@ PrefabInstance:
     - target: {fileID: 4330771780717907986, guid: 1fdac60eb48fc1145978843066315a2b, type: 3}
       propertyPath: m_Name
       value: CanvasCout
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998947257917533606, guid: 1fdac60eb48fc1145978843066315a2b, type: 3}
+      propertyPath: coutStart
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 6142109497135811139, guid: 1fdac60eb48fc1145978843066315a2b, type: 3}
       propertyPath: m_Pivot.x
@@ -7913,7 +7918,7 @@ MonoBehaviour:
   - {fileID: 984760647}
   - {fileID: 1257833966}
   direction: {x: 0, y: 0, z: 0}
-  prefabTile: {fileID: 7992872365762294823, guid: 91d97c657b1ec6b4a9aa8eebd7fdf5b5, type: 3}
+  prefabTile: {fileID: 7992872365762294823, guid: 1dfc278f410837d4090390712d572e8a, type: 3}
 --- !u!4 &1547594090
 Transform:
   m_ObjectHideFlags: 0
@@ -9186,6 +9191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1663668320}
+  chercheuse: {fileID: 0}
   lines:
   - "Hey, tu veux nous aider \xE0 faire de l\u2019hydrog\xE9nation ?"
   - "Oh, tu ne sais pas ce que c\u2019est\u2026"

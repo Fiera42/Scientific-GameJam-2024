@@ -79,9 +79,14 @@ public class Molecule : MonoBehaviour
 
 			if (newMol != null)
 			{
+				Debug.Log(currentWaypointIndex + " / size : "+ (waypoints.Length - currentWaypointIndex));
 				newMol.waypoints = new Transform[waypoints.Length-currentWaypointIndex];
-				waypoints.CopyTo(newMol.waypoints, currentWaypointIndex);
-				Debug.Log(currentWaypointIndex);
+				//waypoints.CopyTo(newMol.waypoints, currentWaypointIndex);
+				for (int i = 0; i < waypoints.Length-currentWaypointIndex; i++)
+				{
+					Debug.Log(i);
+					newMol.waypoints[i] = waypoints[i+currentWaypointIndex];
+				}
 				Instantiate(newMol, transform.position, newMol.transform.rotation, transform.parent);
 				Destroy(collision.gameObject);
 				Destroy(this.gameObject);

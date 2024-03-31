@@ -419,7 +419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "10<size=80%> pi\xE8ces</size>"
+  m_text: "25<size=80%> pi\xE8ces</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
   m_sharedMaterial: {fileID: -4245277930741031594, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
@@ -990,8 +990,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 83.71237}
-  m_SizeDelta: {x: 383.81, y: 505.6921}
+  m_AnchoredPosition: {x: 0, y: 0.383}
+  m_SizeDelta: {x: 383.81, y: 672.3507}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &393849908
 MonoBehaviour:
@@ -5620,10 +5620,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasCout
       objectReference: {fileID: 0}
-    - target: {fileID: 5998947257917533606, guid: 1fdac60eb48fc1145978843066315a2b, type: 3}
-      propertyPath: coutStart
-      value: 10000
-      objectReference: {fileID: 0}
     - target: {fileID: 6142109497135811139, guid: 1fdac60eb48fc1145978843066315a2b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6309,7 +6305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "20<size=80%> pi\xE8ces</size>"
+  m_text: "10<size=80%> pi\xE8ces</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
   m_sharedMaterial: {fileID: -4245277930741031594, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
@@ -8845,10 +8841,13 @@ MonoBehaviour:
   textComponent: {fileID: 1663668320}
   chercheuse: {fileID: 0}
   lines:
-  - "Hop hop hop ! Le platine c\u2019est super mais \xE7a co\xFBte cher !"
-  - "Tiens, ton budget : 150 pi\xE8ces, tu ne peux pas le d\xE9passer. Eh oui, la
-    science co\xFBte cher ! Mais ce n\u2019est pas grave, il y a du fer \xE0 utiliser
-    ou de l\u2019aluminium. Essaye de cr\xE9er du m\xE9thanol !"
+  - "Bien jou\xE9 ! Bon \u2026 je t\u2019ai cach\xE9 quelque chose\u2026 tu t\u2019es
+    s\xFBrement rendu compte que le fer et l\u2019aluminium, c\u2019est quand m\xEAme
+    tr\xE8s lent et tu es tr\xE8s vite limit\xE9 dans tes collisions !"
+  - "Voil\xE0 notre recette secr\xE8te ! TADAMMM ! On synth\xE9tise du fer et de
+    l\u2019aluminium pour en faire un seul mat\xE9riau que l\u2019on appelle \xAB
+    interm\xE9tallique \xBB, bien plus rapide et peu cher ! \xC0 toi de g\xE9rer
+    maintenant !"
   textSpeed: 0.02
 --- !u!222 &2045711105
 CanvasRenderer:
@@ -9569,7 +9568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3914019049790071990, guid: cdfef95528ccaa44fb1908a1bf9c942d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3917860904101189194, guid: cdfef95528ccaa44fb1908a1bf9c942d, type: 3}
       propertyPath: m_SortingLayer
