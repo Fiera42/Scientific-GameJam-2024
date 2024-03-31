@@ -37,7 +37,7 @@ public class InteractionManager : MonoBehaviour
     public void RemoveAll()
     {
         isPlaying = false;
-
+        PrixManager._activePrixManager.Init();
 		NewBehaviourScript.Instance.InitMaterial(); //grid
 		foreach (var item in allGenerator)
 		{

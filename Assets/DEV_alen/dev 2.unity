@@ -636,12 +636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec954b15727609441804b586689e3cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endGamePannel: {fileID: 0}
-  musicPlayer: {fileID: 0}
-  cam: {fileID: 0}
-  transitionScreen: {fileID: 0}
-  normalCursor: {fileID: 0}
-  hoverCursor: {fileID: 0}
 --- !u!4 &770889048
 Transform:
   m_ObjectHideFlags: 0
@@ -1742,20 +1736,25 @@ MonoBehaviour:
   allGenerator: []
   startButton: {fileID: 0}
   restartButton: {fileID: 0}
-  grid: {fileID: 0}
+  windowWin: {fileID: 0}
+  isPlaying: 0
   moleculeInteraction:
   - mol1: {fileID: 281104503411757115, guid: f0aad460e83fb22469bafe8a1e13f053, type: 3}
     mol2: {fileID: 281104503411757115, guid: bc6872abf9bed9844a62f1a55ad128fd, type: 3}
     molResult: {fileID: 281104503411757115, guid: a8d979440beecae45a2cf1c76a6ce2bf, type: 3}
+    soundMerge: {fileID: 0}
   - mol1: {fileID: 281104503411757115, guid: a8d979440beecae45a2cf1c76a6ce2bf, type: 3}
     mol2: {fileID: 281104503411757115, guid: bc6872abf9bed9844a62f1a55ad128fd, type: 3}
     molResult: {fileID: 281104503411757115, guid: a8609a8601d43444688c49a3c239cf03, type: 3}
+    soundMerge: {fileID: 0}
   - mol1: {fileID: 281104503411757115, guid: a8609a8601d43444688c49a3c239cf03, type: 3}
     mol2: {fileID: 281104503411757115, guid: bc6872abf9bed9844a62f1a55ad128fd, type: 3}
     molResult: {fileID: 281104503411757115, guid: af27db29daa9f37418128da0a5c24f75, type: 3}
+    soundMerge: {fileID: 0}
   - mol1: {fileID: 281104503411757115, guid: af27db29daa9f37418128da0a5c24f75, type: 3}
     mol2: {fileID: 281104503411757115, guid: ae904c89e26d8e24a91ffb6aa81b8c92, type: 3}
     molResult: {fileID: 281104503411757115, guid: 3e3d4ee2cac6f7f4e85572a1505daa7e, type: 3}
+    soundMerge: {fileID: 0}
 --- !u!1001 &2090837123
 PrefabInstance:
   m_ObjectHideFlags: 0

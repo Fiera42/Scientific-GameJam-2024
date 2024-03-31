@@ -53,6 +53,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
+  prefabTile: {fileID: 7992872365762294823, guid: 91d97c657b1ec6b4a9aa8eebd7fdf5b5, type: 3}
 --- !u!1 &2755494597321594550
 GameObject:
   m_ObjectHideFlags: 0

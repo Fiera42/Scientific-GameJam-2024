@@ -15,4 +15,4 @@ MonoBehaviour:
   typeSprite: {fileID: 21300000, guid: 8e15d22ca268b204db4d9ae497f75bd0, type: 3}
   nameMetal: Platine
   speed: 10
-  price: 10
+  price: 200

@@ -7,23 +7,34 @@ public class PrixManager : MonoBehaviour
 {
     public static PrixManager _activePrixManager;
     public TextMeshProUGUI textToModify;
-    float coutTotal = 0;
-    // Start is called before the first frame update
-    void Start()
+    private int coutTotal = 2000;
+	public int coutStart = 2000;
+
+
+	private void Awake()
+	{
+		_activePrixManager = this;
+	}
+
+	void Start()
     {
-        _activePrixManager = this;
+        Init();
+
+	}
+
+    public bool UpdatePrix(int valueToAdd)
+    {
+        coutTotal -= valueToAdd;
+        if(coutTotal < 0 ) {return false;}
+        
+        textToModify.text = coutTotal.ToString() + " pièces";
+        return true;
+    }
+
+    public void Init()
+    {
+        coutTotal = coutStart;
         UpdatePrix(0);
     }
 
-    public void UpdatePrix(float valueToAdd)
-    {
-        coutTotal += valueToAdd;
-        textToModify.text = coutTotal.ToString();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textToModify: {fileID: 1377836796676329741}
+  coutStart: 2800
 --- !u!1 &4959659541596452770
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,8 +260,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: xx pieces
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 19eea258aabc5b5478d0c116c4808fcb, type: 2}
-  m_sharedMaterial: {fileID: -53628911746873869, guid: 19eea258aabc5b5478d0c116c4808fcb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
+  m_sharedMaterial: {fileID: -4245277930741031594, guid: 054fe063e66ca724fa8b0ae2e0af57bd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
