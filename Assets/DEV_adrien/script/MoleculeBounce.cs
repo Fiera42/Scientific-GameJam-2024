@@ -6,6 +6,7 @@ public class MoleculeBounce : MonoBehaviour {
 
     [SerializeField] private float jumpHeight;
     [SerializeField] private Molecule parent;
+    [SerializeField] private ParticleSystem particles;
     private float phase = 0f;
 
     void Update() {
@@ -17,6 +18,7 @@ public class MoleculeBounce : MonoBehaviour {
 
         if(phase > Mathf.PI) { // Reset the phase just to avoid useless big numbers and for potential OnJump events
             phase = 0;
+            particles.Play();
         }
 
         float y = Mathf.Abs(Mathf.Sin(phase)) * jumpHeight; // Get the current height of the jump using a sin wave
