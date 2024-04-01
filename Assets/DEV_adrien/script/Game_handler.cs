@@ -12,10 +12,18 @@ public class Game_handler : MonoBehaviour
     public GameObject transitionScreen;
     public Texture2D normalCursor;
     public Texture2D hoverCursor;
+    public Texture2D grabCursor;
     private bool isOverCursor;
 
+    public bool isMainMenu;
+
     void Start(){
-        Cursor.SetCursor(normalCursor, new Vector2(5,5), CursorMode.Auto);
+        if(isMainMenu) {
+            Cursor.SetCursor(normalCursor, new Vector2(250,5), CursorMode.Auto);
+        }
+        else {
+            Cursor.SetCursor(hoverCursor, new Vector2(250,5), CursorMode.Auto);
+        }
         isOverCursor = false;
     }
 
