@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/DEV_anne_sophie/Scenes/Niveau3DEV.unity
     guid: ea56f9e8c080db34f9ac1fbac6f593ed
   - enabled: 1
+    path: Assets/Niveau5.unity
+    guid: 6f5ac2572f4e67c449f256f3537c26fa
+  - enabled: 1
     path: Assets/DEV_alen/niv/niv4.unity
     guid: 1a06255b35551734d9725364f72a25d9
   m_configObjects: {}

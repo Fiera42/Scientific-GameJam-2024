@@ -48,9 +48,11 @@ public class Molecule : MonoBehaviour
 							//win
 							Debug.Log("win");
 							AudioManager.instance.PlayWin();
+							InteractionManager.Instance.isPlaying = false;
 							StartCoroutine(AnimateSprite());
 							break;
 						case "H":
+						case "H2":
 							Destroy(gameObject);
 							break;
 						default:

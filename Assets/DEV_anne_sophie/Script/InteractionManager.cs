@@ -26,6 +26,7 @@ public class InteractionManager : MonoBehaviour
 
 	public void StartAllGenerator()
     {
+        if (isPlaying) return;
         isPlaying = true;
 
 		foreach (var item in allGenerator)

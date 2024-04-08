@@ -19,10 +19,10 @@ public class Game_handler : MonoBehaviour
 
     void Start(){
         if(isMainMenu) {
-            Cursor.SetCursor(normalCursor, new Vector2(250,5), CursorMode.Auto);
+            Cursor.SetCursor(normalCursor, new Vector2(5,5), CursorMode.Auto);
         }
         else {
-            Cursor.SetCursor(hoverCursor, new Vector2(250,5), CursorMode.Auto);
+            Cursor.SetCursor(hoverCursor, new Vector2(5,5), CursorMode.Auto);
         }
         isOverCursor = false;
     }
